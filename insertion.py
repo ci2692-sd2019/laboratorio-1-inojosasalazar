@@ -1,4 +1,9 @@
-#
+'''
+Autores:
+Alejandro Salazar 16-11080
+Cristian Inojosa 17-10285
+'''
+
 def insertion_sort(array:[int]):
 	N = len(array)
 
