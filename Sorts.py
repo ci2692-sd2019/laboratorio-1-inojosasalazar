@@ -6,7 +6,7 @@ Cristian Inojosa 17-10285
 
 ''' INSERTON SORT '''
 
-def insertion_sort(array:[int]):
+def InsertionSort(array:[int], p:int, r:int):
 	N = len(array)
 
 	for i in range(1, N):
@@ -19,16 +19,16 @@ def insertion_sort(array:[int]):
 
 ''' MERGE SORT '''
 
-def merge_sort(A:[int], p:int, r:int):
-	if r-p > 2:
+def MergeSort(A:[int], p:int, r:int):
+	if r-p >= 2:
 		q = (p + r) // 2
 
-		merge_sort(A, p, q)
-		merge_sort(A, q, r)
+		MergeSort(A, p, q)
+		MergeSort(A, q, r)
 
-		merge(A, p, q, r)
+		Merge(A, p, q, r)
 
-def merge( A: [int], p: int, q: int , r: int):
+def Merge( A: [int], p: int, q: int , r: int):
 	
 	Left, Right, n , m = [], [], q-p, r-q
 
@@ -39,7 +39,7 @@ def merge( A: [int], p: int, q: int , r: int):
 		Right.append( A[q+i])
 
 	Left.append( float("inf") )
-	Right.append( float("-inf") )
+	Right.append( float("inf") )
 	i, j = 0, 0
 
 	for k in range(p, r):
@@ -49,7 +49,3 @@ def merge( A: [int], p: int, q: int , r: int):
 		else:
 			A[k]=Right[j]
 			j+=1
-
-A = [3, 2, 1, 0]
-merge_sort(A, 0, len(A))
-print(A)
